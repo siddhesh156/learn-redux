@@ -13,6 +13,40 @@
   }
 }
 
+/* @media (min-width: 320px) {
+
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    align-content: space-between;
+  }
+
+  .Card-Css {
+    background-color:'transparent';
+    color: grey;
+     margin: 20px;
+     display: flex;
+     flex-direction: row;
+     align-content: space-between
+    }
+} */
+
+.Card{
+  background-color:'transparent';
+  color: grey;
+   margin: 20px;
+   display: flex;
+   flex-direction: row;
+   align-content: space-between;
+  }
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,6 +56,29 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  align-content: space-between;
+ 
+}
+
+.App-header2 {
+  background-color: #282c34;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  align-content: space-between;
+  
+ 
+}
+
+.App-header2 > div{
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
 }
 
 .App-link {
