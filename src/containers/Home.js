@@ -62,17 +62,17 @@ const Home = (props) => {
            <Button  style={{margin: '10px'}}  onClick={() => btnGraph()}>Graph</Button>
          </div>
          <div style={{margin: '20px'}}>
-         {isLogged ? <h6> Valuable information i shouldn't see</h6> : ''}
+         {isLogged ? <h6> Valar Morghulis </h6> : ''}
          </div>
         
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://www.hbo.com/game-of-thrones"
           target="_blank"
           rel="noopener noreferrer"
           style={{margin: '10px'}}
         >
-          Learn React
+          GOT INFO
         </a>
         </div>
        
