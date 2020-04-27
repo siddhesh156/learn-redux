@@ -33,8 +33,13 @@ class Chart extends React.Component {
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
                 .append("g")
-                .attr("transform",
-                "translate(" + margin.left + "," + margin.top + ")");
+                // .transition()
+                // .attr("transform", (d, i) => `translate(${i * 26},${y(d)})`);
+                 .attr("transform",
+                 "translate(" + margin.left + "," + margin.top + ")");
+                //.attr("transform",
+                //"translate(" + margin.bottom + "," + margin.top + ")");
+
         // Add X axis
         let x = d3.scaleLinear()
                 .domain([0, 50])
@@ -82,6 +87,7 @@ class Chart extends React.Component {
                 .data(this.state.data)
                 .enter()
                 .append("rect")
+                
                 .on('mouseover', function(){
                     d3.select(this).style('opacity', 0.5)
                  })
@@ -91,20 +97,59 @@ class Chart extends React.Component {
                 // .attr("x", x(0) )
                 // .attr("y", (d) => y(d[this.state.yAxisAttribute]))
 
-               
+                // .transition()
+                // .attr("transform", (d, i) => `translate(${i * 26},${y(d)})`);
 
+               // .transition(d3.transition().duration(1000))
+                // .attr("x", (d) => y(d[this.state.yAxisAttribute]) )
+                // // .transition(d3.transition().duration(1000))
+                // // .attr("transform", (d, i) => `translate(0,0)`)
+
+                // .attr("y", (d, i) => x(d[this.state.xAxisAttribute]))
+                
+                // .attr("width", 0)
+                // // .attr("height", y.bandwidth() -10 )
+                // // .attr("fill", "#DF337D")
+                // // .transition(d3.transition().duration(1000))
+                // // .attr("width", (d) => x(d[this.state.xAxisAttribute]))
+
+               
+                // //.attr("transform","translate(" + 0+ "," + margin.bottom + ")")
+
+                // .attr("height",(d, i) => x(0) - x(d[this.state.xAxisAttribute]))
+
+                //////////////////
                 .attr("x", (d) => y(d[this.state.yAxisAttribute]) )
+                
+                .attr("width", y.bandwidth() -10)
+                
+                
+                .transition(d3.transition().duration(1000))
+                .attr("transform", (d, i) => "translate(0," + 500 - x(d[this.state.xAxisAttribute]) + ")")
+                
                 .attr("y", (d, i) => x(d[this.state.xAxisAttribute]))
-                .attr("width", 0)
-                // .attr("height", y.bandwidth() -10 )
-                // .attr("fill", "#DF337D")
-                // .transition(d3.transition().duration(1000))
-                // .attr("width", (d) => x(d[this.state.xAxisAttribute]))
+                
+                
                 .attr("height",(d, i) => x(0) - x(d[this.state.xAxisAttribute]))
+                
+                
+
+
+                
+               
+                
+               
+                ////////////////////
+                
+
                 // .attr("fill", "#DF337D")
                 .attr("fill", "#61dafb")
-                .transition(d3.transition().duration(1000))
-                .attr("width", y.bandwidth() -10)
+                // .transition(d3.transition().duration(1000)) //umcomment
+                //.attr("width", y.bandwidth() -10)
+                //.transition(d3.transition().duration(1000))
+                //.attr("transform", (d, i) => `translate(${i * 26},${y(d)})`);
+
+                
             
                 console.log('x: ',(this.state.data[this.state.xAxisAttribute]))
                 console.log('y: ',10)

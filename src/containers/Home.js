@@ -22,6 +22,11 @@ const Home = (props) => {
       
       props.history.push("./Chart")
     }
+
+    const btnTwemoji = () =>{
+      
+      props.history.push("./Twemoji")
+    }
    
 
     console.log('some',cardDetails)
@@ -60,6 +65,7 @@ const Home = (props) => {
          <div style={{display: 'felx', flexDirection: 'row', justifyContent: 'center', alignContent: 'center'}}>
            <Button  style={{margin: '10px'}} onClick={() => dispatch(isLog())}>Info</Button>
            <Button  style={{margin: '10px'}}  onClick={() => btnGraph()}>Graph</Button>
+           <Button  style={{margin: '10px'}}  onClick={() => btnTwemoji()}>Twemoji</Button>
          </div>
          <div style={{margin: '20px'}}>
          {isLogged ? <h6> Valar Morghulis </h6> : ''}

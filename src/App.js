@@ -11,6 +11,7 @@ import Home from './containers/Home';
 import { Router, Route , BrowserRouter} from 'react-router-dom'
 import Moredetails from './containers/Moredetails';
 import Chart from './containers/Chart';
+import TwemojiDisplay from './containers/TwemojiDisplay';
 
 //import { createBrowserHistory } from 'history'
 
@@ -68,6 +69,7 @@ function App(){
       <Route exact path="/" component={Home}/>
       <Route exact path="/Moredetails" component={Moredetails} />
       <Route exact path="/Chart" component={Chart} />
+      <Route exact path="/Twemoji" component={TwemojiDisplay} />
     </BrowserRouter>
     
   );
