@@ -43,7 +43,8 @@ class Chart extends React.Component {
         // Add X axis
         let x = d3.scaleLinear()
                 .domain([0, 50])
-                .range([width - 600, 0]);
+                 .range([width - 600, 0]);
+                //.range([0,width - 600]);
         // svg.append("g")
         //         .attr("transform", "translate(0," + height + ")")
         //         .attr('class','axis x')
@@ -125,13 +126,18 @@ class Chart extends React.Component {
                 
                 
                 .transition(d3.transition().duration(1000))
-                .attr("transform", (d, i) => "translate(0," + 500 - x(d[this.state.xAxisAttribute]) + ")")
-                
+               // .attr("transform", (d, i) => "translate(0," +  x(d[this.state.xAxisAttribute]) + ")")
+               .attr("y", x(0))
+               .attr("height",0)
+               
+               .transition(d3.transition().duration(1000))
+
                 .attr("y", (d, i) => x(d[this.state.xAxisAttribute]))
                 
                 
-                .attr("height",(d, i) => x(0) - x(d[this.state.xAxisAttribute]))
-                
+                 .attr("height",(d, i) => x(0) - x(d[this.state.xAxisAttribute]))
+                //.attr("height",(d, i) => x(d[this.state.xAxisAttribute] -x(0)))
+
                 
 
 
